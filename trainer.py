@@ -1,7 +1,8 @@
 from sklearn import metrics
 from yellowbrick.regressor import ResidualsPlot
 from sklearn.model_selection import train_test_split
-import pandas as pd 
+import pandas as pd
+import pickle
 
 
 class Model:
@@ -31,7 +32,11 @@ class Model:
     y_train_pred = self.regressor.predict(self.X_train)
     print("Training Results:")
     results["train"]["r2"], results["train"]["mae"] = self.calculate_results(self.y_train, y_train_pred)
+    print("Saving Trained model as a pickle file")
+    pickle.dump(self.regressor, open('model.pkl','wb'))
+    self.regressor = pickle.load(open('model.pkl','rb'))
     print("Making Predictions")
+    self.X_test.to_csv("Test Data.csv",index = False)
     y_pred = self.regressor.predict(self.X_test)
     print("Test Results:")
     results["test"]["r2"], results["test"]["mae"] = self.calculate_results(self.y_test, y_pred)

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Deployment Tutorial 1</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+ -->  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Sales Forecasting</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="Census Region" placeholder="Census Region" required="required" />
+      <input type="text" name="Census Divison" placeholder="Census Divison" required="required" />
+      <input type="text" name="Reportable Domain" placeholder="Reportable Domain" required="required" />
+      <input type="text" name="Heating Degree Days (last year)" placeholder="Heating Degree Days" required="required" />
+      <input type="text" name="Heating Degree Days (30 yrs)" placeholder="Heating Degree Days" required="required" />
+      <input type="text" name="Cooling Degree Days (30 yrs)" placeholder="Cooling Degree Days" required="required" />
+    	<input type="text" name="Total Electricity Cost" placeholder="Total Electricity Cost" required="required" />
+      <input type="text" name="Elec. Cost for Space Heating" placeholder="lec. Cost for Space Heating" required="required" />
+      <input type="text" name="Metro or Micro zone" placeholder="Metro or Micro zone" required="required" />
+      <input type="text" name="Urban or Rural" placeholder="Urban or Rural" required="required" />
+      <input type="text" name="Total rooms" placeholder="Total rooms" required="required" />
+      <input type="text" name="Heated rooms" placeholder="Heated rooms" required="required" />
+      <input type="text" name="AC rooms" placeholder="AC rooms" required="required" />
+      <input type="text" name="Total Square Footage" placeholder="Total Square Footage" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Energy Consumption</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>

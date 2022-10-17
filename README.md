@@ -12,7 +12,7 @@ Residential Energy Consumption Survey (RECS) is a national sample survey that co
 
 ## Dataset
 
-Link to the dataset: Dataset
+Link to the dataset: [RECS Survey Data](https://www.eia.gov/consumption/residential/data/2009/index.php?view=microdata)
 
 The dataset contains 12,083 rows with 938 features with both numerical and categorical columns. Since, there are a lot of features a lot of steps were involved with respect to cleaning the data. The various steps are outlined as below,
 
@@ -77,7 +77,7 @@ The following image shows the feature importance provided by the XGBoost model w
 
 ## Implementation details
 
-The repository contains a jupyter notebook [EfficientNet with attention mechanism](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/Analysis/Energy_Consumption.ipynb) which provides the walkthrough of the entire process. 
+The repository contains a jupyter notebook [Energy Prediction](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/Analysis/Energy_Consumption.ipynb) which provides the walkthrough of the entire process. 
 
 To replicate the entire process and reproduce the results please implement the following steps,
 

@@ -8,7 +8,7 @@ Residential Energy Consumption Survey (RECS) is a national sample survey that co
 
 ## Project Workflow
 
-![alt text](https://github.com/Sudhandar/EfficientNet-Attention-in-a-Siamese-Network/blob/main/images/sample_dataset.png)
+![alt text](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/images/Energy%20Prediction.png)
 
 ## Dataset
 
@@ -30,6 +30,12 @@ The dataset contains 12,083 rows with 938 features with both numerical and categ
 
 ## Evaluation Metrics
 
+The following metrics have been selected to evaluate the performance of the models,
+
+1.  R^2 error - Helps in measuring the goodness of fit and comparing the performance of models.
+2.  Mean Absolute Error - Helps in finding out the value by which the predictions are wrong.
+
+
 ## Model Selection
 
 ### Reasons for rejecting a linear model
@@ -39,7 +45,7 @@ The data fails the following assumptions of a linear regression model,
 1. Independence - All the features are dependent on each (multicollinearity). This was verified using the Variance Inflation Factor (VIF)
 2. The data is not linear - This was verified by plotting the residuals of a lasso regression model.
 
-![alt text](https://github.com/Sudhandar/EfficientNet-Attention-in-a-Siamese-Network/blob/main/images/sample_dataset.png)
+![alt text](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/images/Linear%20model%20plots.png)
 
 
 ## Reasons for opting a tree based model:
@@ -54,24 +60,24 @@ Due to the non-linearity of the data, it's better to pivot to a tree based regre
 
 The following are the results of the XGBoost model on the train and the test sets, 
 
-**Train R2:**  0.9438   
-**Train MAE:**  1012.6
-**Test R2:**  0.9160 
-**Test MAE:** 1169.13
+- **Train R2:**  0.9438  
+- **Train MAE:**  1012.6
+- **Test R2:**  0.9160 
+- **Test MAE:** 1169.13
 
 ### Residuals Plot
 
-![alt text](https://github.com/Sudhandar/EfficientNet-Attention-in-a-Siamese-Network/blob/main/images/sample_dataset.png)
+![alt text](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/images/XGBoost%20plots.png)
 
 
 The following image shows the feature importance provided by the XGBoost model which helps in explaining the results to the stakeholders,
 
-![alt text](https://github.com/Sudhandar/EfficientNet-Attention-in-a-Siamese-Network/blob/main/images/sample_dataset.png)
+![alt text](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/images/Feature%20Importance.png)
 
 
 ## Implementation details
 
-The repository contains a jupyter notebook [EfficientNet with attention mechanism](https://github.com/Sudhandar/EfficientNet-Attention-in-a-Siamese-Network/blob/main/EfficientNet_with_attention_mechanism.ipynb) which provides the walkthrough of the entire process. 
+The repository contains a jupyter notebook [EfficientNet with attention mechanism](https://github.com/Sudhandar/Housing-Energy-Prediction/blob/main/Analysis/Energy_Consumption.ipynb) which provides the walkthrough of the entire process. 
 
 To replicate the entire process and reproduce the results please implement the following steps,
 
